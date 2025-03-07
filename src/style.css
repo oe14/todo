@@ -9,6 +9,13 @@ font-family: 'Handwriting', sans-serif;
  background-image: url('./images/bg.jpeg');
 
 }
+
+.prevent-select {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
 li{ 
 list-style:none; }
 
