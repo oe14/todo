@@ -1,30 +1,17 @@
+
 import './style.css';
-import pencilIcon from './images/pencil.png';
+import Task from './task';
+import Todo from './todo';
+import { renderTasks, setupForm } from './dom';
 
-document.addEventListener("DOMContentLoaded", () => {
-    // Check if an image already exists to prevent duplicates
-    if (!document.querySelector('.pencil-icon')) {
-        const img = document.createElement("img");
-        img.src = pencilIcon;
-        img.alt = "Edit";
-        img.classList.add('pencil-icon'); // Add a class for easier selection
+const holiday = new Todo("personal");
+const task1 = new Task("Buy gifts", "Get gifts for family", "high");
+const task2 = new Task("Pack bags", "Prepare luggage", "medium");
 
-        document.body.appendChild(img); // Append only if it doesn't exist
-    }
+holiday.addTask(task1);
+holiday.addTask(task2);
 
-    // Checkbox logic
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+const taskListDiv = document.getElementById("task-list");
 
-    checkboxes.forEach(checkbox => {
-        checkbox.addEventListener("change", function () {
-            const label = this.closest("label");
-            if (this.checked) {
-                label.style.textDecoration = "line-through";
-                label.style.color = "black";
-            } else {
-                label.style.textDecoration = "none";
-                label.style.color = "black";
-            }
-        });
-    });
-});
+renderTasks(holiday, taskListDiv);
+setupForm(holiday, taskListDiv);

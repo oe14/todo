@@ -1,25 +1,7 @@
-class Task { 
-  constructor(name, description = "", priority = "normal", completed = false) {
-    this.name = name; 
-    this.description = description; 
-    this.priority = priority; 
-    this.completed = completed; 
-  }
 
-  toggleComplete() {
-    this.completed = !this.completed;
-  }
-  
-  edit(name, description, priority) {
-    if (name) this.name = name;
-    if (description) this.description = description;
-    if (priority) this.priority = priority;
-  }
-}
-
-class Todo {
+export default class Todo {
   constructor(type) {
-    this.type = type; // personal/work
+    this.type = type; // "personal" or "work"
     this.tasks = [];
   }
 
@@ -32,16 +14,6 @@ class Todo {
   }
 
   getTasks() {
-    return this.tasks; 
+    return this.tasks;
   }
 }
-
-const holiday = new Todo("personal"); 
-const task1 = new Task("Buy gifts", "Get gifts for family", "high");
-const task2 = new Task("Pack bags", "Prepare luggage", "medium");
-
-holiday.addTask(task1);
-holiday.addTask(task2);
-
-console.log(holiday.getTasks()); 
-

@@ -1,51 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo List</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Todo List</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+  <div id="app">
+    <main>
+      <h1>Todo List</h1>
 
-    <div id="app">
+      <form id="new-task-form">
+        <input type="text" id="task-name" placeholder="Task name" required />
+        <input type="text" id="task-desc" placeholder="Description" />
+        <select id="task-priority">
+          <option value="low">Low</option>
+          <option value="normal" selected>Normal</option>
+          <option value="high">High</option>
+        </select>
+        <button type="submit">Add Task</button>
+      </form>
+
      
-        <main>
-            <aside id="project-list"></aside>
-            <section id="todo-container">
-                <h2>Todo list</h2>
-
-<!-- <button>add</button> -->
-<input type="text" style="display:none">
-
-                <ul id="todo-list">
-                    
+      <div id="task-list"></div>
+    </main>
+  </div>
 
 
+  <script src="bundle.js"></script>
 
-             
-         <li>   <label class="container prevent-select">take shower
-  <input type="checkbox" >
-  <span class="checkmark"></span>
-</label>
-</li>
-          <li>  <label class="container prevent-select" >code
-  <input type="checkbox" >
-  <span class="checkmark"></span>
-</label></li>
-            <li><label class="container prevent-select" >fold clothes
-  <input type="checkbox" >
-  <span class="checkmark" ></span>
-</label></li>
 
-   </ul>
-
-            </section>
-        </main>
-    </div>
-    <script src="bundle.js"></script>
-
-    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+  <script>
+    document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + 
+    ':35729/livereload.js?snipver=1"></' + 'script>');
+  </script>
 </body>
 </html>
